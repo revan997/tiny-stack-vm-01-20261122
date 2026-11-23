@@ -19,15 +19,15 @@ else if(o==4)D.push(D[l])
 else if(o==5){[D[l],D[l-1]]=[D[l-1],D[l]]}
 else if(o==6)D.push(D[l-1])
 else if(o==7){[D[l-2],D[l-1],D[l]]=[D[l-1],D[l],D[l-2]]}
-else if(o-16<19&&o-23&&o-27){let b=D.pop(),a=D.pop(),A=a>>>0,B=b>>>0
+else if(o<35&&o-23&&o-27){let b=D.pop(),a=D.pop(),A=a>>>0,B=b>>>0
 if(o>18&o<23&&!b)return X(4)
 D.push([a+b,a-b,Math.imul(a,b),a/b,a%b,A/B,A%B,0,a&b,a|b,a^b,0,a<<b,a>>b,a>>>b,0,a==b,a<b,A<B][o-16]|0)}
 else if(o-23<5)D[l]=o<24?-D[l]|0:~D[l]
 else if(o==48)p+=s
-else if(o-49<2){let v=D.pop();if((v==0)==(o<50))p+=s}
+else if(o-49<2){let v=D.pop();if(!v==(o<50))p+=s}
 else if(o==51){if(C.length>63)return X(7);C.push(p);p=u}
 else if(o==52){if(!C.length)return X(8);p=C.pop()}
-else if(o-64<2){let a=D[l];if((a>>>0)>255)return X(6);if(o<65)D[l]=m[a]|0;else{m[a]=D[l-1];D.length-=2}}
+else if(o-64<2){let a=D[l];if(a>>>0>255)return X(6);if(o<65)D[l]=m[a]|0;else{m[a]=D[l-1];D.length-=2}}
 else if(o==80){let b=Buffer.from(''+D.pop());if(L+b.length>65536)return X(11);O.set(b,L);L+=b.length}
 else if(o==81){if(L>65535)return X(11);O[L++]=D.pop()&255}
 else if(o==82)D.push(N[j++]??-1)
